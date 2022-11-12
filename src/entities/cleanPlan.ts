@@ -5,6 +5,7 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   JoinColumn,
+  Index,
 } from 'typeorm';
 import User from './User';
 
@@ -16,6 +17,7 @@ export default class CleanPlan extends BaseEntity {
   @PrimaryGeneratedColumn({ type: 'int', name: 'cleanPlanId' })
   cleanPlanId: number;
 
+  @Index()
   @Column('varchar', { name: 'date', length: 10 })
   date: string;
 
